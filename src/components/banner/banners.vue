@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper-container banners">
+  <div class="swiper-container banners" id="banners">
     <div class="swiper-wrapper">
         <div 
             class="swiper-slide"
@@ -19,17 +19,40 @@ import swiper from "swiper"
 export default {
     data(){
         return {
-            banners:[]
+            banners:[],
+            page:1
         }
     },
     created(){
         this.$http.get("/api/sk/home/list",{
             params:{
-                page:3
+                page:this.page
             }
         }).then(res=>{
            this.banners = res.data.data.object_list
-           console.log(this.banners)
+           console.log(this.page)
+           this.$nextTick(()=>{
+               new swiper('.swiper-container', {
+                    slidesPerView: 3,
+                    spaceBetween: 125,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    });
+           })
+
+        })
+    },
+ watch: {
+        page:function(){
+        this.$http.get("/api/sk/home/list",{
+            params:{
+                page:this.page
+            }
+        }).then(res=>{
+           this.banners = res.data.data.object_list
+           console.log(this.page)
            this.$nextTick(()=>{
                new swiper('.swiper-container', {
                     slidesPerView: 3,
@@ -44,6 +67,8 @@ export default {
            
         })
     }
+        }
+
 }
 </script>
 

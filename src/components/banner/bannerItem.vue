@@ -1,10 +1,10 @@
 <template>
-  <div class="bannerItem">
+  <div class="bannerItem" id="bannerItem">
       <span 
         v-for="nav in navs"
         :key="nav.id"
         :class="{active:type===nav.id}"
-        @click="type=nav.id"
+        @click="type=nav.id,change()"
       >{{nav.title}}</span>
       
   </div>
@@ -12,7 +12,8 @@
 </template>
 
 <script>
-
+//引入banners
+import bBns from "./banners"
 export default {
   data(){
     return {
@@ -29,10 +30,12 @@ export default {
     }
   },
   methods:{
-
+    change(){
+      this.$parent.$refs.btn.page=this.type
+    }
   },
   components:{
-    
+   
   }
 }
 </script>
@@ -49,7 +52,7 @@ export default {
         width: 100%
       }
       span:last-child{
-        margin-right: 1rem
+        margin-right: 0.7rem
       }
   }
 </style>
