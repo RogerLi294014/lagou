@@ -7,7 +7,7 @@
             </div>
             <van-search placeholder="搜索明星、演出比赛、场馆" v-model="value" background="#f5f5f5"/>
             <i class="iconfont search">&#xe64d;</i>
-            <i class="iconfont mine">&#xe603;</i>
+            <router-link class="iconfont mine" to="/login">&#xe603;</router-link>
         </div>
         <div class="imgBox">
             <img src="//img.alicdn.com/tfs/TB1DQVikkL0gK0jSZFAXXcA9pXa-960-360.jpg_q60.jpg_.webp" alt="">

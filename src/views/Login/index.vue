@@ -21,7 +21,8 @@
                     </div>
                     <div class="x x2" v-if="showX2" @click="msgC=''">×</div>
                 </div>
-                <div class="loginBtn">登录</div>
+                <router-link class="loginBtn" to="/home">登录</router-link>
+                
             </form>
             <div class="registBox">
                 <a>账号密码登录</a>
@@ -220,6 +221,7 @@ export default {
     }
 }
 .loginBtn{
+    display: block;
     font-size: 18px;
     background-color: #ff1268;
     background-image: -webkit-gradient(linear,left top,right top,from(#ff4aae),to(#ff1268));
