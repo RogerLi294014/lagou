@@ -10,11 +10,13 @@
       <div class="select">
           <h3 class="cp">票档</h3>
           <div class="btnbox">
-                <button>399元</button>
-                <button>599元</button>
-                <button>799元</button>
-                <button>999元</button>
-                <button>1299元</button>
+                <button 
+                    v-for="nav in navs"                
+                    :key="nav.id"
+                    :class="{active:type===nav.id}"
+                     @click="type=nav.id"
+                >{{nav.type}}</button>
+                
                 <button class="last">1299元</button>
           </div>
          
@@ -25,7 +27,18 @@
 
 <script>
 export default {
-
+    data(){
+        return {
+            type:1,
+            navs:[
+                {id:1,type:"399元"},
+                {id:2,type:"599元"},
+                {id:3,type:"799元"},
+                {id:4,type:"999元"},
+                {id:5,type:"1299元"},
+            ]
+        }
+    }
 }
 </script>
     
@@ -75,7 +88,10 @@ export default {
                 display: flex;
                 justify-content: space-between;
                 flex-wrap: wrap;
-                
+                .active{
+                    background: rgba(255,45,121,.1);
+                    color: #ff2d79;
+                }
                 button{
                     width: 1.1rem;
                     height: 0.47rem;
