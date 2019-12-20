@@ -12,7 +12,7 @@
         <div class="imgBox">
             <img src="//img.alicdn.com/tfs/TB1DQVikkL0gK0jSZFAXXcA9pXa-960-360.jpg_q60.jpg_.webp" alt="">
         </div>
-        <ul class="damaiList">
+        <ul class="damaiList clear">
             <li
             v-for="msg in msgList"
             :key="msg.id">
@@ -20,7 +20,24 @@
                 <p>{{msg.title}}</p>
             </li>
         </ul>
-        
+        <div class="middleImg">
+            <img src="//img.alicdn.com/tps/i4/TB1wLq8p7L0gK0jSZFAwu3A9pXa.png_q60.jpg_.webp" alt="">
+        </div>
+        <div class="performTitle">
+            <span>近期演出</span><span>演出日历></span>
+        </div>
+
+        <ul class="weekday">
+            <li>今天</li>
+            <li>明天</li>
+            <li>周一</li>
+            <li>周二</li>
+            <li>周三</li>
+            <li>周四</li>
+            <li>周五</li>
+            <li>周六</li>
+            <li>周日</li>
+        </ul>
     </div>
 </template>
 
@@ -49,51 +66,71 @@ export default {
 </script>
 
 <style lang="scss">
+.weekday{
+    justify-content: space-between;
+    margin: 0 .24rem .32rem;
+    color: #999;
+    font-size: .13rem;
+    display: flex;
+}
+.performTitle{
+    display: flex;
+    justify-content: space-between;
+    margin: .165rem .12rem .12rem;
+    font-size: .16rem;
+    font-weight: 700;
+    color:#000;
+    span:nth-child(2){
+        font-size: .12rem;
+        color: #999;
+        font-weight: 400;
+    }
+}
     .homeHeader{
-        height: 1.33333rem;
+        height: 0.5rem;
         background: #f5f5f5;
         display: flex;
-        line-height:1.33333rem;
+        line-height:0.5rem;
         position: relative;
         .country{
-            font-size: .42667rem;
-            margin: 0 .48rem;
+            font-size: 0.05rem;
+            margin: 0 .12rem;
             color: #222;
             i:nth-child(2){
-                font-size: .42667rem;
+                font-size: .12rem;
                 
             }
             .couIcon{
-                margin-right:.1rem;
+                margin-right:.05rem;
             }
         }
         .search{
-            margin-right: .24rem;
+            margin-right: .12rem;
             color: #888;
-            font-size: .4rem;
+            font-size: .2rem;
             position:absolute;
-            left:2.6rem;
+            left:0.7rem;
         }
         input{
             align-items: center;
-            height: .72rem;
-            border-radius: .4rem;
+            height: .3rem;
+            border-radius: .2rem;
             background: #fff;
             color: #999;
             border:none;
-            padding-left:36px;
-            width:6rem;
-            font-size: .37333rem;
+            padding-left:45px;
+            width:2.5rem;
+            font-size: .15rem;
         }
         
         .mine{
-            font-size: .64rem;
-            margin: 0 .48rem 0 .32rem;
+            font-size: .2rem;
+            margin: 0 .2rem 0 .16rem;
         }
     }
     .imgBox{
         width: 100%;
-        height: 3.73333rem;
+        height: 1.4rem;
         overflow: hidden;
         img{
             width:100%;
@@ -102,18 +139,18 @@ export default {
 
 .damaiList{
     background: #fff;
-    padding: .48rem 0 .24rem;
+    padding: .15rem 0 .12rem;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     li{
         float:left;
         display: block;
         width: 25%;
-        margin-bottom: .4rem;
+        margin-bottom: .1rem;
         text-align: center;
         img{
-            width: .85333rem;
-            height: .85333rem;
+            width: .32rem;
+            height: .32rem;
             margin: 0 auto;
             display: block;
             background-size: auto 100%;
@@ -121,10 +158,18 @@ export default {
             background-repeat: no-repeat;
         }
         p{
-            padding-top: .08rem;
-            font-size: .32rem;
+            padding-top: .04rem;
+            font-size: .12rem;
             color: #222;
         }
+    }
+    
+}
+.middleImg{
+    img{
+        display: block;
+        width: 100%;
+        height: 1.2rem;
     }
     
 }

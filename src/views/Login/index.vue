@@ -21,7 +21,7 @@
                     </div>
                     <div class="x x2" v-if="showX2" @click="msgC=''">×</div>
                 </div>
-                <router-link class="loginBtn" to="/home">登录</router-link>
+                <router-link class="loginBtn" :to="{name:'mine',params:{id:telNum}}">登录</router-link>
                 
             </form>
             <div class="registBox">
@@ -45,9 +45,6 @@
             </header>
             <mt-picker :slots="slots" @change="onValuesChange"></mt-picker>
        </mt-popup>
-
-        
-        
     </div>
 </template>
 
@@ -78,7 +75,7 @@ export default {
             }
         }
     },
-    methods: {
+methods: {
     msgCode(){
         this.msgC = '';
     },
@@ -141,7 +138,7 @@ export default {
       showX2:false,
       toastObj:false,
       showX:false,
-      telNum:"",
+      telNum:null,
       slots: [
         {
           flex: 1,
@@ -287,13 +284,13 @@ export default {
     }
 }
 #logo-box{
-    height: 3.26667rem;
+    height: 1.6rem;
     display: flex;
     justify-content: center;
     img{
-        width: 2.66667rem;
-        height: 1.21333rem;
-        margin-top: 1.02667rem;
+        width: 1.3rem;
+        height: 0.6rem;
+        margin-top: 0.5rem;
     }
 }
 .login-label-text{
