@@ -1,5 +1,5 @@
 <template>
-  <div class="movie-item"
+  <div :class="['movie-item',{fiexd:isFixed}]"
     v-infinite-scroll="loadMore"
     infinite-scroll-disabled="loading"
     infinite-scroll-distance="10"
@@ -24,11 +24,13 @@
 </template>
 
 <script>
+import { watch } from 'fs'
 export default {
     data(){
         return{
             movies:null,
-            hasMore:true//代表有更多数据
+            hasMore:true,//代表有更多数据
+            isFixed:false
         }
     },
     created(){
@@ -46,6 +48,17 @@ export default {
             console.log(this.movies)
             })
         }
+    },
+    watch:{
+        isFixed:function(){
+              window.addEventListener("scroll",e=>{
+                let sTop = document.documentElement.scrollTop||document.body.scrollTop;
+                console.log(sTop)
+              
+                this.isFixed = this.isFixed
+               
+            })
+        }
     }
 }
 </script>
@@ -53,9 +66,12 @@ export default {
 <style lang="scss">
     .movie-item{
         // background: #eee;
+        &.fixedBox{
+            margin-top: 1.1rem;     
+        }
         .list{
             width: 100%;
-            height:1.3rem ;
+            height:1.3rem;
             // background: pink;
             margin: 0.17rem 0;
         .right{

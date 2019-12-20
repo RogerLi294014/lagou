@@ -1,8 +1,8 @@
 <template>
   <div class="movie-box">
       <h3 class="more">更多演出</h3>
-      <MovieTiitle></MovieTiitle>
-      <MovieItem></MovieItem>
+      <MovieTiitle ref="mtt"></MovieTiitle>
+      <MovieItem ref="mtm"></MovieItem>
       <div class="sj">没有更多数据了。。。</div>
   </div>
 </template>

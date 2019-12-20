@@ -21,7 +21,20 @@
           </div>
          
       </div>
-      <div class="hint"></div>
+      <div class="hint">
+          <h3>购买数量</h3>
+          <span class="num">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+          </span>
+      </div>
+      <div class="ft">
+          <div class="price">￥999</div>
+          <router-link tag="div" to="/car" class="bt">确定</router-link>
+          <!-- <router-view></router-view> -->
+
+      </div>
   </div>
 </template>
 
@@ -80,7 +93,7 @@ export default {
             }
         }
         .select{
-            height: 3.5rem;
+            height: 2.5rem;
             margin:  0.31rem 0.14rem 0;
             .btnbox{
                 width: 100%;
@@ -108,6 +121,55 @@ export default {
             }
             .cp{
                 margin: 0.12rem 0;
+            }
+        }
+        .hint{
+            width: 100%;
+            margin: 0.12rem;
+            .num{
+                width: 1rem;
+                float: right;
+                button{
+                    width: 0.2rem;
+                    height: 0.2rem;
+                    background-color: #f5f5f5;
+                    color: #666;
+                    border: 0
+                }
+                span{
+                    display: inline-block;
+                    width: 0.3rem;
+                    height: 0.2rem;
+                    text-align: center
+                }
+            }
+        }
+        .ft{
+            width: 100%;
+            height: 0.8rem;
+            margin-top: 0.5rem;
+            // background: yellow;
+            display: flex;
+            justify-content: space-between;
+            .price{
+                width: 0.8rem;
+                height: 0.5rem;
+                float: left;
+                font-size: 0.20rem;
+                line-height: 0.5rem;
+                color: #ff2d79;
+            }
+            .bt{
+                width: 1.5rem;
+                height: 0.42rem;
+                margin-right: 0.12rem;
+                border-radius: 0.2rem 0.2rem 0.2rem 0;
+                background-image: linear-gradient(90deg,#ff3299 1%,#ff4a72);
+                color: #fff;
+                font-size: 0.15rem;
+                text-align: center;
+                line-height: 0.42rem;
+                border: 0;
             }
         }
     }
