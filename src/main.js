@@ -9,6 +9,8 @@ Vue.config.productionTip = false
 
 import { Picker } from 'mint-ui';
 import { Popup } from 'mint-ui';
+import { Search } from 'vant';
+Vue.use(Search);
 Vue.component("mt-picker", Picker);
 Vue.component("mt-popup", Popup);
 
