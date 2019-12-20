@@ -75,32 +75,31 @@ export default {
 <style lang="scss">
     .swiper-slide{
         width: 100%;
-        height: 7.37333rem;
+        height: 3.1rem;
         background-size: contain;
         display: inline-block;
-        width: 7rem;
-        height: 20rem;
+        width: 4rem;
         flex-direction: column;
-        margin-top: 1.5rem;
+        margin-top: 0.2rem;
         color:#000;
         .title{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            margin: 1rem 0 0.2rem;
-            width: 9.3rem;
-            font-size: 0.9rem;
+            margin: 0.12rem 0 0.02rem;
+            width:1.5rem;
+            font-size: 0.14rem;
             font-weight: 550;
         }
         p{
-            width: 9.3rem;
+            width: 4rem;
         }
         .bimg{
             background-repeat: no-repeat;
             display: inline-block;
-            width: 9.3rem;
-            height: 13rem;
-            border-radius: .25rem;
+            width: 1.5rem;
+            height: 2.2rem;
+            border-radius: .05rem;
         }
     }
     

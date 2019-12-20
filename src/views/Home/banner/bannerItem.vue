@@ -51,8 +51,8 @@ export default {
       span{
         width: 100%
       }
-      span:last-child{
-        margin-right: 0.7rem
-      }
+      // span:last-child{
+      //   // margin-right: 0.7rem
+      // }
   }
 </style>

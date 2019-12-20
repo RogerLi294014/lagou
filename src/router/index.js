@@ -2,10 +2,13 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
-import banner from "./banner"
+import home from "./home"
+import info from "./info"
 const router = new VueRouter({
+  
   routes:[
-    banner,
+    {path:"/",redirect:"/home"},
+    home,info
   ]
 })
 

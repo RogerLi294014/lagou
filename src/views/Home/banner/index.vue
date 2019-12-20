@@ -27,16 +27,16 @@ export default {
     h3{
       font-weight: 550;
       color: #000;
-      margin-bottom: 1rem;
+      margin-bottom: 0.15rem;
       display: inline-block;
     }
     h4{
       float: right;
-      margin-top: 0.2rem;
+      margin: 0.02rem 0.1rem 0 0;
     }
-    margin: 0 0rem 0rem 1.1rem;
+    margin: 0 0rem 0rem 0.15rem;
     color: #999;
-    background: yellow;
+    // background: yellow;
     .banbox{
       width: 100%;
       display: flex;
