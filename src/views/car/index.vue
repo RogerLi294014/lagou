@@ -44,7 +44,8 @@
         <div class="ft">
             
           <div class="price">￥999</div>
-          <router-link to="/car" class="bt">提交订单</router-link>
+          <a href="https://www.alipay.com/" class="bt">提交订单</a>
+
           <!-- <router-view></router-view> -->
 
       

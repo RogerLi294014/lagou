@@ -42,6 +42,7 @@
 export default {
     data(){
         return {
+            key:[],
             type:1,
             navs:[
                 {id:1,type:"399元"},
