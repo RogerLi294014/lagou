@@ -1,12 +1,15 @@
 <template>
-  <div class="car">
+<div>
+  <img v-if="!datas" src="../../assets/loading.gif" alt="">
+  <div v-else class="car">
+    
      <div class="head">
         <div class="box1">
-            <h3>2020广州超级跨年</h3>
+            <h3>{{datas[0].name}}</h3>
             <p>广州|广州海信沙亚公园亚运看台</p>
         </div>
         <div class="box2">
-            <h3>2019.12.31 20:30</h3>
+            <h3>{{datas[0].showTime}}</h3>
             <p>￥1280.00票档 x 1张</p>
         </div>
         <div class="box3">
@@ -52,10 +55,40 @@
         </div>
      </div>
   </div>
+  </div>
 </template>
 
 <script>
 export default {
+      data(){
+        return{
+          datas:[],
+          num:[]
+        }
+      },
+      created(){
+        this.$http.get(`/api/sk/more`,{      
+      
+        }).then(res=>{
+        // console.log(res.data.data.object_list)
+        // console.log(this.$route.params.id)
+        for(var i = 0;i<res.data.data.object_list.length-1;i++){
+            if(res.data.data.object_list[i].id ==this.$route.params.id){
+            this.datas.push(res.data.data.object_list[i])
+            // console.log(this.datas)
+            
+            }
+           
+            
+        }
+         this.num=JSON.parse(localStorage.good)
+            console.log(this.num)
+        })
+    },
+    methods:{
+      
+    }
+    
 
 }
 </script>
@@ -77,7 +110,7 @@ export default {
       }
       .box1{
         border-bottom: 0.01rem solid rgb(228, 101, 131);;
-        height: 0.6rem;
+        height: 0.7rem;
         h3{
           font-weight: 550;
           font-size: 0.17rem;
