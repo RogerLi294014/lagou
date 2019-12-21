@@ -1,6 +1,8 @@
 <template>
   <div class="qwer">
-    <div class="aaa"
+    <router-link 
+    :to="'/into/'+data.id"
+    class="aaa"
     v-for="data in datas"
     :key="data.id"
   >
@@ -12,7 +14,7 @@
         <span>{{data.cityName}}\{{data.showTime}}\{{data.venueName}}</span>
         <span>￥{{data.priceStr}}</span>
       </div>
-  </div>
+    </router-link>
   </div>
 </template>
 
@@ -28,6 +30,7 @@ export default {
     this.$http.get("/api/sk/more",{      
     }).then(res=>{
       this.datas=res.data.data.object_list
+      
     })
   }
 }

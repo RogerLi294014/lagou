@@ -3,8 +3,7 @@
         <div  class="swiper-wrapper">
             <div class="swiper-slide"          
             v-for="bannerData in bannerDatas"
-            :key="bannerData.id" 
-            @click="select"
+            :key="bannerData.id"           
             >
                 <router-link :to="{name:bannerData.name}" active-class="active">
                     {{bannerData.title}}
@@ -34,11 +33,7 @@ export default {
                 {id:"11",title:"旅游展览",name:"travel"}]
         }
     },
-    methods:{
-        select(){
-          
-        }
-    },
+  
     computed:{
     },
     mounted(){
