@@ -1,7 +1,7 @@
 
 <template>
    <div class="home">
-       222
+       <mainpage></mainpage>
        <banner></banner>
        <moviebox></moviebox>
    </div>
@@ -10,10 +10,12 @@
 <script>
 import banner from "./banner"
 import moviebox from "./MovieBox"
+import mainpage from "./mainpage"
 export default {
     components:{
         banner,
-        moviebox
+        moviebox,
+        mainpage
     }
 }
 </script>

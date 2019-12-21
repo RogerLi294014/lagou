@@ -1,14 +1,18 @@
 <template>
+  <div>
+      <!-- <img v-if="!movies" src="@/assets/loading.gif" alt=""> -->
   <div :class="['movie-item',{fiexd:isFixed}]"
     v-infinite-scroll="loadMore"
     infinite-scroll-disabled="loading"
     infinite-scroll-distance="10"
   >
-      <div 
+      <router-link
+      tag="div"
         v-lazy="movie"
         class="list"
         v-for="movie in movies"
         :key="movie.id"
+        :to="'/info/'+movie.id"
         >
           <img width="100" height="130" :src="movie.verticalPic" alt="">
           <div class="right">
@@ -19,7 +23,8 @@
             <div class="price">￥399-1299</div>
 
           </div>
-      </div>
+      </router-link>
+  </div>
   </div>
 </template>
 
@@ -38,14 +43,14 @@ export default {
     },
     methods:{
         loadMore(){
-            console.log(1111112222233333)
+            
             this.getMovies()
         },
         getMovies(){
             this.$http.get("/api/sk/more ").then(res=>{
           
                 this.movies = res.data.data.object_list
-            console.log(this.movies)
+            
             })
         }
     },
@@ -53,7 +58,7 @@ export default {
         isFixed:function(){
               window.addEventListener("scroll",e=>{
                 let sTop = document.documentElement.scrollTop||document.body.scrollTop;
-                console.log(sTop)
+               
               
                 this.isFixed = this.isFixed
                

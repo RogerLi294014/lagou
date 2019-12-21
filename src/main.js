@@ -13,8 +13,20 @@ import axios from "axios"
 //引入res
 import "./modules/rem"
 //引入图片懒加载
-import { Lazyload,InfiniteScroll,Cell } from 'mint-ui';
+import { Lazyload,InfiniteScroll,Cell,Navbar, TabItem,Swipe, SwipeItem} from 'mint-ui';
+import { Picker } from 'mint-ui';
+import { Popup } from 'mint-ui';
+import { Search } from 'vant';
+import { Panel } from 'vant';
 
+Vue.component(Navbar.name, Navbar);
+Vue.component(TabItem.name, TabItem);
+Vue.component("mt-swipe", Swipe);
+Vue.component("mt-swipe-item", SwipeItem);
+Vue.use(Search);
+Vue.use(Panel);
+Vue.component("mt-picker", Picker);
+Vue.component("mt-popup", Popup);
 
 //无限滚动
 Vue.use(InfiniteScroll);

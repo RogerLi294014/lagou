@@ -1,15 +1,17 @@
 <template>
   <div class="swiper-container banners" id="banners">
     <div class="swiper-wrapper">
-        <div 
+        <router-link 
+        tag="div"
             class="swiper-slide"
             v-for = "banner in banners"
             :key="banner.zmid"
+            :to="'/info/'+banner.id"
             >
             <img class="bimg" :src="banner.verticalPic" alt="">
             <p class="title">{{banner.name}}</p>
             <p>￥{{banner.priceLow}}起</p>
-        </div>
+        </router-link>
     </div>
   </div>
 </template>
@@ -30,7 +32,7 @@ export default {
             }
         }).then(res=>{
            this.banners = res.data.data.object_list
-           console.log(this.page)
+           
            this.$nextTick(()=>{
                new swiper('.swiper-container', {
                     slidesPerView: 3,
@@ -52,7 +54,7 @@ export default {
             }
         }).then(res=>{
            this.banners = res.data.data.object_list
-           console.log(this.page)
+          
            this.$nextTick(()=>{
                new swiper('.swiper-container', {
                     slidesPerView: 3,
