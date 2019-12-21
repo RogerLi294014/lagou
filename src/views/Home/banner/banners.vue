@@ -30,7 +30,7 @@ export default {
             }
         }).then(res=>{
            this.banners = res.data.data.object_list
-           console.log(this.page)
+        //    console.log(this.page)
            this.$nextTick(()=>{
                new swiper('.swiper-container', {
                     slidesPerView: 3,

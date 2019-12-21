@@ -4,7 +4,9 @@
     infinite-scroll-disabled="loading"
     infinite-scroll-distance="10"
   >
-      <div 
+      <router-link 
+        :to="'/info/'+movie.id"
+        tag="div"
         v-lazy="movie"
         class="list"
         v-for="movie in movies"
@@ -19,7 +21,7 @@
             <div class="price">￥399-1299</div>
 
           </div>
-      </div>
+      </router-link>
   </div>
 </template>
 
@@ -38,14 +40,14 @@ export default {
     },
     methods:{
         loadMore(){
-            console.log(1111112222233333)
+            // console.log(1111112222233333)
             this.getMovies()
         },
         getMovies(){
             this.$http.get("/api/sk/more ").then(res=>{
           
                 this.movies = res.data.data.object_list
-            console.log(this.movies)
+            // console.log(this.movies)
             })
         }
     },
@@ -53,7 +55,7 @@ export default {
         isFixed:function(){
               window.addEventListener("scroll",e=>{
                 let sTop = document.documentElement.scrollTop||document.body.scrollTop;
-                console.log(sTop)
+                // console.log(sTop)
               
                 this.isFixed = this.isFixed
                

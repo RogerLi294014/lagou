@@ -5,7 +5,7 @@
           <h3 class="cp">场次</h3>
           <span class="t">场次时间均为演出当地时间</span>
       </div>
-     <button class="Radio">2020-02-29 周六  19:00</button>
+     <button class="Radio">{{this.datas[0]}}</button>
       
       <div class="select">
           <h3 class="cp">票档</h3>
@@ -14,7 +14,7 @@
                     v-for="nav in navs"                
                     :key="nav.id"
                     :class="{active:type===nav.id}"
-                     @click="type=nav.id"
+                     @click="type=nav.id "
                 >{{nav.type}}</button>
                 
                 <button class="last">1299元</button>
@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import axios from "axios"
 export default {
     data(){
         return {
@@ -50,8 +51,24 @@ export default {
                 {id:3,type:"799元"},
                 {id:4,type:"999元"},
                 {id:5,type:"1299元"},
-            ]
+            ],
+            datas:[]
         }
+    },
+    created(){
+        this.$http.get(`/api/sk/more`,{      
+      
+        }).then(res=>{
+        // console.log(res.data.data.object_list)
+        // console.log(this.$route.params.id)
+        for(var i = 0;i<res.data.data.object_list.length-1;i++){
+            if(res.data.data.object_list[i].id ==this.$route.params.id){
+            this.datas.push(res.data.data.object_list[i].showTime)
+            // console.log(this.datas)
+            }
+            
+        }
+        })
     }
 }
 </script>

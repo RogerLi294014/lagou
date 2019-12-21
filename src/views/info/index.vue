@@ -43,10 +43,12 @@
 
 <script>
 import listC from "./listC"
+
 export default {
     components:{
         listC
-    }
+    },
+    
 }
 </script>
 
