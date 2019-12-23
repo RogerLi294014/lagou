@@ -32,7 +32,7 @@ export default {
         window.addEventListener("scroll",e=>{
             let sTop = document.documentElement.scrollTop||document.body.scrollTop;
             
-            if(sTop>=300){
+            if(sTop>=700){
                 this.isFixed = true
             }else{
                  this.isFixed = false

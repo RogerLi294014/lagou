@@ -1,3 +1,5 @@
 export default {
-    cars:[]
+    num:1,
+    key:399,
+    sum:399
 }

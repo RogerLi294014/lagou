@@ -70,8 +70,9 @@ export default {
             margin-bottom:.12rem;
             height: 0.55rem;
             width: auto;
-            background-color: pink;
+            background-color: #ffffff;
             padding-right:2rem;
+            
         }
          .swiper-slide {
             // margin:0 16px;

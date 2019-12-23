@@ -10,7 +10,7 @@
         </div>
         <div class="box2">
             <h3>{{datas[0].showTime}}</h3>
-            <p>￥1280.00票档 x 1张</p>
+            <p>￥{{price}}票档 x {{num}}张</p>
         </div>
         <div class="box3">
             <i class="fa fa-exclamation-circle"></i><span>不支持退</span>
@@ -46,7 +46,7 @@
        </div>
         <div class="ft">
             
-          <div class="price">￥999</div>
+          <div class="price">￥{{allprice}}</div>
           <a href="https://www.alipay.com/" class="bt">提交订单</a>
 
           <!-- <router-view></router-view> -->
@@ -63,7 +63,10 @@ export default {
       data(){
         return{
           datas:[],
-          num:[]
+          storage:[],
+          num:0,
+          price:0,
+          allprice:0
         }
       },
       created(){
@@ -81,9 +84,12 @@ export default {
            
             
         }
-         this.num=JSON.parse(localStorage.good)
-            console.log(this.num)
-        })
+         this.storage=JSON.parse(localStorage.good)
+            console.log(this.storage)
+            this.price=this.storage.a
+            this.num= this.storage.b
+            this.allprice=this.storage.c
+})
     },
     methods:{
       

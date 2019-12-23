@@ -34,7 +34,7 @@
       </div>
       <div class="ft">
           <div class="price">￥{{onesum}}</div>
-          <router-link tag="div" @click="localStorage" :to="'/car/'+this.$route.params.id" class="bt" >确定</router-link>
+          <router-link tag="div" @click.native="localStorage" :to="'/car/'+this.$route.params.id" class="bt" >确定</router-link>
           <!-- <router-view></router-view> -->
     <!-- :to="'/car/'+this.$route.params.id" -->
       </div>
